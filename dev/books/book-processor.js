@@ -156,7 +156,7 @@ function writeBookFiles(book, children, rootFolder, tmplStr, nodeList) {
         );
         //if (!isNodeEmpty(node)) // not write empty files
         genericWriteFile(`${rootFolder}/${getNodeFileName(node)}`, contentDiv, tmplStr,
-            { title: `${node.header.text()} - ${book.name}`, desc: `${book.name} - ${book.author}`, folder: book.folder, imagetxt: node.header.text().toString().replace(/(^\d)|\.|\?/g,' ').trim() })
+            { title: `${node.header.text()} - ${book.name}`, desc: `${book.name} - ${book.author}`, folder: book.folder, imagetxt: node.header.text().toString().replace(/(^\d+)|\.|\?/g,' ').trim() })
         writeBookFiles(book, node.children, rootFolder, tmplStr, nodeList);
     });
 }
